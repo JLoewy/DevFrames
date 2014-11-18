@@ -1,0 +1,24 @@
+//
+// Prefix header for all source files of the 'ScreenShotPrep' target in the 'ScreenShotPrep' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "DataResourceHandler.h"
+#endif
+
+#define isIpad UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+#define Color(r,g,b,a) [UIColor colorWithRed:(r/(float)255) green:(g/(float)255) blue:(b/(float)255) alpha:a]
+
+/// Saved Image Macros
+#define kSavedImagesKey @"saved_images"
+#define kNewImageSavedAlert @"NewImageSaved"
