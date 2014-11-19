@@ -22,22 +22,22 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Hallo sans black.otf</string>
-		<string>Hallo sans light.otf</string>
-		<string>Hallo sans.otf</string>
-	</array>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>5</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Hallo sans black.otf</string>
+		<string>Hallo sans light.otf</string>
+		<string>Hallo sans.otf</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard_iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>
-	<string>MainStoryboard_iPad</string>
+	<string>MainStoryboard_iPhone</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -54,8 +54,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>

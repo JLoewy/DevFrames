@@ -14,22 +14,88 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Choose Your Device-->
-        <scene sceneID="9eE-g1-EWC">
+        <!--Select Your Device-->
+        <scene sceneID="GVc-Jv-Hix">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="5" navigationOrientation="horizontal" spineLocation="none" id="5UT-3t-O3t" customClass="DEVDeviceSelectionPageViewController" customModule="ScreenShotPrep" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Choose Your Device" id="SPP-Wm-Eet">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="yMK-nB-F1m">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                <collectionViewController id="WNb-R0-fek" customClass="DEVDeviceSelectionCollectionViewController" customModule="ScreenShotPrep" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="Orv-0c-QPe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="66y-7i-5eN">
+                            <size key="itemSize" width="550" height="400"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Device-Cell" id="lMO-5V-37r" customClass="DEVDeviceCollectionViewCell" customModule="ScreenShotPrep" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="550" height="400"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZmJ-Ox-YAr">
+                                            <rect key="frame" x="25" y="20" width="500" height="240"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uo1-Xc-Ku3">
+                                            <rect key="frame" x="160" y="260" width="231" height="41"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="41" id="nDp-b1-c6j"/>
+                                                <constraint firstAttribute="width" constant="231" id="t5V-f1-sYi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Hallosans-Light" family="Hallo sans" pointSize="26"/>
+                                            <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="uo1-Xc-Ku3" firstAttribute="top" secondItem="ZmJ-Ox-YAr" secondAttribute="bottom" id="13W-vI-c7G"/>
+                                    <constraint firstAttribute="bottom" secondItem="uo1-Xc-Ku3" secondAttribute="bottom" constant="52" id="727-ro-TVr"/>
+                                    <constraint firstItem="ZmJ-Ox-YAr" firstAttribute="leading" secondItem="lMO-5V-37r" secondAttribute="leading" constant="25" id="CNO-iJ-0Rj"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="uo1-Xc-Ku3" secondAttribute="bottom" constant="91" id="Eou-Sj-PCh"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="uo1-Xc-Ku3" secondAttribute="bottom" constant="24" id="GRr-hc-NAp"/>
+                                    <constraint firstItem="uo1-Xc-Ku3" firstAttribute="top" secondItem="ZmJ-Ox-YAr" secondAttribute="bottom" id="IQb-XK-CHg"/>
+                                    <constraint firstItem="uo1-Xc-Ku3" firstAttribute="centerX" secondItem="ZmJ-Ox-YAr" secondAttribute="centerX" id="JA7-yu-rAi"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZmJ-Ox-YAr" secondAttribute="trailing" constant="25" id="bRB-3A-OM6"/>
+                                    <constraint firstItem="ZmJ-Ox-YAr" firstAttribute="top" secondItem="lMO-5V-37r" secondAttribute="top" constant="20" id="fbs-hb-cVL"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="727-ro-TVr"/>
+                                        <exclude reference="GRr-hc-NAp"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="deviceImageView" destination="ZmJ-Ox-YAr" id="PYC-bA-jsK"/>
+                                    <outlet property="deviceTitle" destination="uo1-Xc-Ku3" id="ODw-QP-28d"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="WNb-R0-fek" id="ejC-hn-dvg"/>
+                            <outlet property="delegate" destination="WNb-R0-fek" id="P12-sZ-vA3"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Select Your Device" id="WoJ-Cj-WSZ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="LA3-BK-cIX">
                             <connections>
-                                <segue destination="84O-Fl-iJw" kind="presentation" identifier="Present-Image-Picker" id="Wzs-1T-rKh"/>
+                                <segue destination="84O-Fl-iJw" kind="presentation" identifier="Present-Image-Picker" id="1XB-2d-xXg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d6t-Cq-qcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UJj-eH-q61" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2624" y="-82"/>
+            <point key="canvasLocation" x="2599" y="-82"/>
         </scene>
         <!--Adjust Screenshot-->
         <scene sceneID="1sx-pI-oBJ">
@@ -149,54 +215,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghs-ZB-O9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="NcF-Kl-49g"/>
             </objects>
-            <point key="canvasLocation" x="4170" y="-82"/>
-        </scene>
-        <!--Device View Controller-->
-        <scene sceneID="U5c-NR-hhw">
-            <objects>
-                <viewController storyboardIdentifier="Device-Type-View-Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2aw-kl-J2I" customClass="DEVDeviceViewController" customModule="ScreenShotPrep" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TfB-08-ySR"/>
-                        <viewControllerLayoutGuide type="bottom" id="Tc3-gO-rI1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1Sx-Xh-1nL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aUt-wm-Zih">
-                                <rect key="frame" x="50" y="84" width="500" height="375"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxG-fM-Pm3">
-                                <rect key="frame" x="185" y="470" width="231" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="231" id="0BR-So-CcZ"/>
-                                    <constraint firstAttribute="height" constant="48" id="sPV-Tu-rtl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Hallosans-Light" family="Hallo sans" pointSize="26"/>
-                                <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="aUt-wm-Zih" firstAttribute="centerX" secondItem="mxG-fM-Pm3" secondAttribute="centerX" id="8PA-xJ-QqR"/>
-                            <constraint firstAttribute="centerX" secondItem="aUt-wm-Zih" secondAttribute="centerX" id="VLk-rk-qXs"/>
-                            <constraint firstItem="aUt-wm-Zih" firstAttribute="leading" secondItem="1Sx-Xh-1nL" secondAttribute="leadingMargin" constant="34" id="kym-SO-Gnb"/>
-                            <constraint firstItem="mxG-fM-Pm3" firstAttribute="top" secondItem="aUt-wm-Zih" secondAttribute="bottom" constant="11" id="p4z-KS-sHK"/>
-                            <constraint firstItem="aUt-wm-Zih" firstAttribute="top" secondItem="TfB-08-ySR" secondAttribute="bottom" constant="20" id="th4-Tj-Z8W"/>
-                            <constraint firstAttribute="centerY" secondItem="aUt-wm-Zih" secondAttribute="centerY" constant="28.5" id="uci-pn-asT"/>
-                        </constraints>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="deviceImageView" destination="aUt-wm-Zih" id="aM5-ZC-4sP"/>
-                        <outlet property="nameLabel" destination="mxG-fM-Pm3" id="VeQ-aD-o6X"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aKZ-zW-bUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2931" y="671"/>
+            <point key="canvasLocation" x="4198" y="-82"/>
         </scene>
         <!--Settings-->
         <scene sceneID="ByP-N9-is9">
@@ -425,7 +444,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ec3-t5-KGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2743.125" y="-984.50704225352104"/>
+            <point key="canvasLocation" x="3424" y="-985"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0jG-ht-mmr">
@@ -458,7 +477,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="5UT-3t-O3t" kind="relationship" relationship="rootViewController" id="bPo-qJ-VWn"/>
+                        <segue destination="WNb-R0-fek" kind="relationship" relationship="rootViewController" id="f3p-Cw-gMJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5O-sJ-DJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -562,6 +581,6 @@
         <image name="screenshotTab" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pwk-GX-IYd"/>
+        <segue reference="1XB-2d-xXg"/>
     </inferredMetricsTieBreakers>
 </document>
