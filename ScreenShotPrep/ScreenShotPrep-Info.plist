@@ -30,9 +30,11 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Hallo sans black.otf</string>
-		<string>Hallo sans light.otf</string>
-		<string>Hallo sans.otf</string>
+		<string>SourceSansPro-Semibold.ttf</string>
+		<string>SourceSansPro-Bold.ttf</string>
+		<string>SourceSansPro-ExtraLight.ttf</string>
+		<string>SourceSansPro-Light.ttf</string>
+		<string>SourceSansPro-Regular.ttf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard_iPhone</string>

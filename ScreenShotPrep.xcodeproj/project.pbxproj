@@ -13,9 +13,11 @@
 		03A990D51A15F59900FD7342 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03A990D41A15F59900FD7342 /* Media.xcassets */; };
 		03BE905C1A1C5FA6001010B4 /* DEVDeviceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE905B1A1C5FA6001010B4 /* DEVDeviceCollectionViewCell.swift */; };
 		03BE905E1A1C5FED001010B4 /* DEVDeviceSelectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE905D1A1C5FED001010B4 /* DEVDeviceSelectionCollectionViewController.swift */; };
-		03BF527E1A19A3A900FED372 /* Hallo sans black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03BF527B1A19A3A900FED372 /* Hallo sans black.otf */; };
-		03BF527F1A19A3A900FED372 /* Hallo sans light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03BF527C1A19A3A900FED372 /* Hallo sans light.otf */; };
-		03BF52801A19A3A900FED372 /* Hallo sans.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03BF527D1A19A3A900FED372 /* Hallo sans.otf */; };
+		03C985D01A1EDA64001B5005 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03C985CB1A1EDA64001B5005 /* SourceSansPro-Bold.ttf */; };
+		03C985D11A1EDA64001B5005 /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03C985CC1A1EDA64001B5005 /* SourceSansPro-ExtraLight.ttf */; };
+		03C985D21A1EDA64001B5005 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03C985CD1A1EDA64001B5005 /* SourceSansPro-Light.ttf */; };
+		03C985D31A1EDA64001B5005 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03C985CE1A1EDA64001B5005 /* SourceSansPro-Regular.ttf */; };
+		03C985D41A1EDA64001B5005 /* SourceSansPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03C985CF1A1EDA64001B5005 /* SourceSansPro-Semibold.ttf */; };
 		03D50B0F1A169DD000020DAF /* LayeredDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D50B0E1A169DD000020DAF /* LayeredDeviceView.swift */; };
 		362823CE16A2949E00249EC7 /* ImagePickerPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362823CD16A2949E00249EC7 /* ImagePickerPreviewViewController.m */; };
 		362823DA16A29DD600249EC7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362823D916A29DD500249EC7 /* MessageUI.framework */; };
@@ -43,9 +45,11 @@
 		03A990D41A15F59900FD7342 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		03BE905B1A1C5FA6001010B4 /* DEVDeviceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DEVDeviceCollectionViewCell.swift; path = "Device Selection/View/DEVDeviceCollectionViewCell.swift"; sourceTree = "<group>"; };
 		03BE905D1A1C5FED001010B4 /* DEVDeviceSelectionCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DEVDeviceSelectionCollectionViewController.swift; path = "Device Selection/DEVDeviceSelectionCollectionViewController.swift"; sourceTree = "<group>"; };
-		03BF527B1A19A3A900FED372 /* Hallo sans black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hallo sans black.otf"; sourceTree = "<group>"; };
-		03BF527C1A19A3A900FED372 /* Hallo sans light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hallo sans light.otf"; sourceTree = "<group>"; };
-		03BF527D1A19A3A900FED372 /* Hallo sans.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hallo sans.otf"; sourceTree = "<group>"; };
+		03C985CB1A1EDA64001B5005 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		03C985CC1A1EDA64001B5005 /* SourceSansPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		03C985CD1A1EDA64001B5005 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		03C985CE1A1EDA64001B5005 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		03C985CF1A1EDA64001B5005 /* SourceSansPro-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.ttf"; sourceTree = "<group>"; };
 		03D50B0E1A169DD000020DAF /* LayeredDeviceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayeredDeviceView.swift; path = "Capture Screenshot/LayeredDeviceView.swift"; sourceTree = "<group>"; };
 		362823CC16A2949E00249EC7 /* ImagePickerPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagePickerPreviewViewController.h; path = "Capture Screenshot/ImagePickerPreviewViewController.h"; sourceTree = "<group>"; };
 		362823CD16A2949E00249EC7 /* ImagePickerPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagePickerPreviewViewController.m; path = "Capture Screenshot/ImagePickerPreviewViewController.m"; sourceTree = "<group>"; };
@@ -127,9 +131,11 @@
 		03BF526F1A19A0A600FED372 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				03BF527B1A19A3A900FED372 /* Hallo sans black.otf */,
-				03BF527C1A19A3A900FED372 /* Hallo sans light.otf */,
-				03BF527D1A19A3A900FED372 /* Hallo sans.otf */,
+				03C985CB1A1EDA64001B5005 /* SourceSansPro-Bold.ttf */,
+				03C985CC1A1EDA64001B5005 /* SourceSansPro-ExtraLight.ttf */,
+				03C985CD1A1EDA64001B5005 /* SourceSansPro-Light.ttf */,
+				03C985CE1A1EDA64001B5005 /* SourceSansPro-Regular.ttf */,
+				03C985CF1A1EDA64001B5005 /* SourceSansPro-Semibold.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -299,12 +305,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C985D11A1EDA64001B5005 /* SourceSansPro-ExtraLight.ttf in Resources */,
+				03C985D41A1EDA64001B5005 /* SourceSansPro-Semibold.ttf in Resources */,
 				3654E1C5169BE7C2009DA304 /* InfoPlist.strings in Resources */,
 				3654E1D4169BE7C2009DA304 /* MainStoryboard_iPhone.storyboard in Resources */,
-				03BF527E1A19A3A900FED372 /* Hallo sans black.otf in Resources */,
-				03BF527F1A19A3A900FED372 /* Hallo sans light.otf in Resources */,
-				03BF52801A19A3A900FED372 /* Hallo sans.otf in Resources */,
+				03C985D31A1EDA64001B5005 /* SourceSansPro-Regular.ttf in Resources */,
+				03C985D21A1EDA64001B5005 /* SourceSansPro-Light.ttf in Resources */,
 				03A990D51A15F59900FD7342 /* Media.xcassets in Resources */,
+				03C985D01A1EDA64001B5005 /* SourceSansPro-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

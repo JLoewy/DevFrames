@@ -65,28 +65,4 @@
     return filePath;
 }
 
-+ (BOOL) deleteImageName:(NSString *)imageName
-{
-    NSString* filePath = [self getPathToFile:imageName inDirectory:NSDocumentDirectory];
-    NSError* error;
-    BOOL successful;
-    
-    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
-    {
-        [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
-        
-        if (error)
-        {
-            successful = NO;
-            NSLog(@"ERROR: %@", [error localizedDescription]);
-        }
-        else
-            successful = YES;
-    }
-    else
-        successful = YES;
-    
-    return successful;
-}
-
 @end

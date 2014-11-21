@@ -13,6 +13,7 @@
 @interface Screenshot : NSObject
 
 @property (nonatomic, strong) NSString* title;
+@property (nonatomic, strong, readonly) NSString* fileName;
 @property (nonatomic, strong, readonly) UIImage* screenshot;
 
 - (id) initWithDictionary:(NSDictionary*) initDict;
@@ -27,11 +28,17 @@
 - (id) initWithImage:(UIImage*) screenshotImage;
 
 - (NSString*) getTimeStamp;
-- (NSString*) getFileName;
 
 /**
  *  Responsible for saving the screenshot to persistant storage for later use
  */
 - (void) saveScreenshot;
+
+/**
+ *  Responsible for deleting the current screenshot from the users NSDocumentDirectory
+ *
+ *  @return a boolean flag on if the deletion was successful or not
+ */
+- (BOOL) deleteScreenshot;
 
 @end

@@ -17,13 +17,8 @@
 {
     if (self = [super init])
     {
-        NSLog(@"SCREEN BOUNDS: %@", NSStringFromCGRect([UIScreen mainScreen].bounds));
-        
         const CGFloat bezelHeightMultiplier = (CGRectGetHeight([UIScreen mainScreen].bounds) / 667.0f);
         const CGFloat bezelWidthMultiplier  = (CGRectGetWidth([UIScreen mainScreen].bounds)  / 375.0f);
-        
-#warning Temporary defaults
-        _bezelWidth  = _bezelHeight = 0.0f;
         
         _isIpadType  = NO;
         _currentType = deviceType;

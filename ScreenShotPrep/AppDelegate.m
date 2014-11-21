@@ -14,15 +14,12 @@
 @implementation AppDelegate
 
 - (void) applyTheme
-{
-    /*
-     Hallosans-Light
-     Font name: HalloSans
-     Font name: Hallosans-Black
-     */
+{    
+    [[UINavigationBar appearance] setBarTintColor:Color(240, 240, 240, 1.0f)];
+    [[UINavigationBar appearance] setTintColor:Color(40, 40, 40, 1.0f)];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"SourceSansPro-Semibold" size:22], NSForegroundColorAttributeName : Color(60, 60, 60, 1.0f)}];
+    [[UIBarButtonItem appearance]  setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"SourceSansPro-Regular" size:14.0f], NSForegroundColorAttributeName : Color(60, 60, 60, 1.0f)} forState:UIControlStateNormal];
     
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HalloSans" size:22], NSForegroundColorAttributeName : Color(60, 60, 60, 1.0f)}];
-    [[UIBarButtonItem appearance]  setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"Hallosans-Light" size:14.0f], NSForegroundColorAttributeName : Color(60, 60, 60, 1.0f)} forState:UIControlStateNormal];
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
 }

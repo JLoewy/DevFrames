@@ -11,7 +11,6 @@
 @interface Screenshot ()
 
 @property (nonatomic, strong) NSDate*   timestamp;
-@property (nonatomic, strong) NSString* fileName;
 
 @end
 
@@ -57,11 +56,6 @@
     return [formatter stringFromDate:_timestamp];
 }
 
-- (NSString*) getFileName
-{
-    return _fileName;
-}
-
 #pragma mark - 
 #pragma mark - Storage Methods
 
@@ -75,8 +69,7 @@
     saveName = [saveName stringByAppendingString:@".png"];
     _title   = [_title stringByReplacingOccurrencesOfString:@"/" withString:@"-"];
     
-    NSDictionary* savedImageDict = @{saveName : @{@"name" : _title,
-                                                  @"date" : [[NSDate alloc] init]}};
+    NSDictionary* savedImageDict = @{saveName : @{@"name" : _title, @"date" : [[NSDate alloc] init]}};
     
     NSMutableArray* savedImages = [[[NSUserDefaults standardUserDefaults] arrayForKey:kSavedImagesKey] mutableCopy];
     [savedImages insertObject:savedImageDict atIndex:0];
@@ -92,6 +85,48 @@
     UIImageWriteToSavedPhotosAlbum(_screenshot, nil, nil, nil);
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kNewImageSavedAlert object:nil];
+}
+
+- (BOOL) deleteScreenshot
+{
+    NSString* filePath = [DataResourceHandler getPathToFile:_fileName inDirectory:NSDocumentDirectory];
+    NSError* error;
+    
+    BOOL successful;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
+    {
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
+        successful = (error) ? NO : YES;
+    }
+    else
+        successful = YES;
+    
+    // If the deletion was successful then remove it from the userdefaults
+    if (successful)
+    {
+        // Find the index of the screenshot
+        NSMutableArray* recentScreenshots = [[[NSUserDefaults standardUserDefaults] arrayForKey:kSavedImagesKey] mutableCopy];
+        NSInteger screenshotIdx           = NSNotFound;
+        for (NSDictionary* currentScreenshot in recentScreenshots)
+        {
+            if ([[currentScreenshot.allKeys firstObject] isEqualToString:_fileName])
+            {
+                screenshotIdx = [recentScreenshots indexOfObject:currentScreenshot];
+                break;
+            }
+            
+        }
+
+        if (screenshotIdx != NSNotFound)
+        {
+            // Remove the screenshot from the persistent storage
+            [recentScreenshots removeObjectAtIndex:screenshotIdx];
+            [[NSUserDefaults standardUserDefaults] setValue:recentScreenshots forKey:kSavedImagesKey];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+    }
+    
+    return successful;
 }
 
 @end

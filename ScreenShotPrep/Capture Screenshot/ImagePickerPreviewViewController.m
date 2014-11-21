@@ -87,6 +87,7 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 }
 
@@ -101,7 +102,7 @@
             [_pickerController setDelegate:self];
             [_pickerController setSourceType:(UIImagePickerControllerSourceTypePhotoLibrary | UIImagePickerControllerSourceTypeSavedPhotosAlbum)];
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .25 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .15 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                 [self presentViewController:_pickerController animated:YES completion:nil];
             });
         }
@@ -111,22 +112,6 @@
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    /*
-    if ([segue.identifier isEqualToString:@"PreviewSettings"])
-    {
-        PreviewSettingsViewController* settingsVC = ((UINavigationController*)segue.destinationViewController).viewControllers[0];
-        [settingsVC setDelegate:self];
-        [settingsVC setAspectStyle:_aspectStyle];
-        [settingsVC setAspectScale:_aspectScale];
-        
-        if (_activeScreenshot.title.length > 0)
-            [settingsVC setOutputName:_activeScreenshot.title];
-    }
-     */
 }
 
 /**
@@ -142,32 +127,17 @@
 #pragma mark - 
 #pragma mark - Screenshot Adjustment Methods
 
-
+/**
+ *  Responsible for reacting to the user changing the value of the currently selected ImagEditOption
+ *
+ *  @param sender The UIStepper that was tapped to call this function
+ */
 - (IBAction)stepperValueChanged:(UIStepper *)sender
 {
     CGFloat delta = (sender.value < _currentValue) ? -1.0f : 1.0f;
     [_screenshotContainer manipulateScreenshot:_currentEditOption delta:delta];
     _currentValue = sender.value;
 }
-
-/**
- *  Responsible for reacting to the desire that the user has of decrease the value of the currently selected ImageEditOption
- *
- *  @param sender the object responsible for firing this method
-- (IBAction)valueDecreased:(UIButton *)sender
-{
-    [_screenshotContainer manipulateScreenshot:_currentEditOption delta:-1.0f];
-}*/
-
-/**
- *  Responsible for reacting to the desire that the user has of increase the value of the currently selected ImageEditOption
- *
- *  @param sender the object responsible for firing this method
-- (IBAction)valueIncreased:(UIButton *)sender
-{
-    [_screenshotContainer manipulateScreenshot:_currentEditOption delta:1.0f];
-}
-*/
 
 /**
  *  Updates the currently selected ImageEditing option based off of which segment is now selected
@@ -198,6 +168,11 @@
 #pragma mark -
 #pragma mark - Share Methods
 
+/**
+ *  Responsible for reacting to the user signifying that they want to share this screenshot. Asks the user if they want to save or email this screenshot
+ *
+ *  @param sender The UIBarButintItem that was tapped to call this function
+ */
 - (IBAction)shareButtonTapped:(UIBarButtonItem *)sender
 {
     UIActionSheet* shareSheet;
@@ -287,6 +262,7 @@ static NSDateFormatter *__nameDateFormatter;
             }
         }
         
+        // Make sure that it has the correct file extention on it
         if (![screenshotName containsString:@".png"])
             [screenshotName appendString:@".png"];
         
@@ -298,6 +274,7 @@ static NSDateFormatter *__nameDateFormatter;
             completionBlock(newScreenshot);
         }
         
+        // Bring back all of the faded UI Objects
         [UIView animateWithDuration:1.0 animations:^{
             [self.view setBackgroundColor:[UIColor darkGrayColor]];
             _editParentToolbar.alpha = self.navigationController.navigationBar.alpha = 1.0f;
@@ -366,7 +343,6 @@ static NSDateFormatter *__nameDateFormatter;
 #pragma mark MFMailComposeViewControllerDelegate Methods
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
-
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -379,7 +355,7 @@ static NSDateFormatter *__nameDateFormatter;
 {
     _activeScreenshot  = [[Screenshot alloc] initWithImage:info[UIImagePickerControllerOriginalImage]];
     [_screenshotContainer configureForScreenshot:_activeScreenshot];
-
+    
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 

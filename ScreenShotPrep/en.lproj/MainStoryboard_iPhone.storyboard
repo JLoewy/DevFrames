@@ -5,12 +5,12 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Hallo sans light.otf">
-            <string>Hallosans-Light</string>
-            <string>Hallosans-Light</string>
+        <mutableArray key="SourceSansPro-Light.ttf">
+            <string>SourceSansPro-Light</string>
         </mutableArray>
-        <mutableArray key="Hallo sans.otf">
-            <string>HalloSans</string>
+        <mutableArray key="SourceSansPro-Regular.ttf">
+            <string>SourceSansPro-Regular</string>
+            <string>SourceSansPro-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -46,7 +46,7 @@
                                                 <constraint firstAttribute="height" constant="41" id="nDp-b1-c6j"/>
                                                 <constraint firstAttribute="width" constant="231" id="t5V-f1-sYi"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Hallosans-Light" family="Hallo sans" pointSize="26"/>
+                                            <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="26"/>
                                             <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -141,7 +141,7 @@
                                                 </button>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-2000" maximumValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="3P0-fW-z7r">
                                                     <rect key="frame" x="3" y="2" width="94" height="29"/>
-                                                    <color key="tintColor" red="0.34050416150000001" green="0.5971868709" blue="0.73607716479999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="stepperValueChanged:" destination="KfW-Jh-Hit" eventType="valueChanged" id="11g-mY-cbz"/>
                                                     </connections>
@@ -161,7 +161,7 @@
                                                 <segment title="Width"/>
                                                 <segment title="Height"/>
                                             </segments>
-                                            <color key="tintColor" red="0.34050416150000001" green="0.5971868709" blue="0.73607716479999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="segmentedControllerChanged:" destination="KfW-Jh-Hit" eventType="valueChanged" id="pKx-ft-c8y"/>
                                             </connections>
@@ -417,14 +417,14 @@
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TyY-2z-ICs">
                                             <rect key="frame" x="15" y="8" width="36" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="HalloSans" family="Hallo sans" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="455-KA-nAc">
                                             <rect key="frame" x="15" y="30" width="50" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="Hallosans-Light" family="Hallo sans" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
@@ -581,6 +581,6 @@
         <image name="screenshotTab" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1XB-2d-xXg"/>
+        <segue reference="pwk-GX-IYd"/>
     </inferredMetricsTieBreakers>
 </document>

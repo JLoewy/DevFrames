@@ -13,7 +13,11 @@ class DEVDeviceCollectionViewCell: UICollectionViewCell {
     @IBOutlet var deviceImageView: UIImageView!
     @IBOutlet var deviceTitle: UILabel!
     
+    /**
+    Responsible for configuring the UI of the collection view cell
     
+    :param: currentDevice the DEVDevice that is being displayed on this cell
+    */
     func configureForDevice(currentDevice:DEVDevice)
     {
         deviceImageView.image = currentDevice.deviceImage

@@ -12,6 +12,4 @@
 
 + (NSString*) getPathToFile:(NSString*) fileName inDirectory:(NSInteger) directoryName;
 
-+ (BOOL) deleteImageName:(NSString*) imageName;
-
 @end
