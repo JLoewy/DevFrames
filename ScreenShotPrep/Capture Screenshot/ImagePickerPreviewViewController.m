@@ -41,6 +41,7 @@
 @property (strong, nonatomic) IBOutlet UIToolbar          *editParentToolbar;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *editTypeSegmentedControl;
 @property NSInteger currentValue;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *deltaSegmentedController;
 
 @end
 
@@ -82,6 +83,11 @@
         // That means that the user is review a previously saved screenshot
         //----
         [_screenshotContainer configureFromSavedScreenshot:_activeScreenshot];
+    }
+    
+    if (!isIpad)
+    {
+        [_deltaSegmentedController removeFromSuperview];
     }
 }
 
@@ -134,7 +140,27 @@
  */
 - (IBAction)stepperValueChanged:(UIStepper *)sender
 {
-    CGFloat delta = (sender.value < _currentValue) ? -1.0f : 1.0f;
+    CGFloat delta;
+    
+    // Base the delta value off of the current selected segment of the delta segmented controllers
+    switch (_deltaSegmentedController.selectedSegmentIndex) {
+        case 0:
+            delta = 1;
+            break;
+        case 1:
+            delta = 2;
+            break;
+        case 2:
+            delta = 5;
+            break;
+        default:
+            delta = 1;
+            break;
+    }
+    
+    if (sender.value < _currentValue)
+        delta *= -1;
+    
     [_screenshotContainer manipulateScreenshot:_currentEditOption delta:delta];
     _currentValue = sender.value;
 }

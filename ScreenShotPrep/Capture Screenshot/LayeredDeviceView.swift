@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LayeredDeviceView: UIView {
+class LayeredDeviceView: UIView, UIGestureRecognizerDelegate {
     
     var forceScreenshotLayout = false
     
@@ -16,6 +16,8 @@ class LayeredDeviceView: UIView {
     let screenshotImageView = UIImageView()
     var bezelWidth  = 20.0
     var bezelHeight = 100.0
+    
+    var originalScreenCenter:CGPoint?
     
     // MARK:- Configuration Methods
     
@@ -42,6 +44,8 @@ class LayeredDeviceView: UIView {
         bezelWidth            = Double(currentDevice.bezelWidth)
         bezelHeight           = Double(currentDevice.bezelHeight)
         deviceImageView.reloadInputViews()
+        
+//        currentDevice.getSomething()
     }
     
     /**
@@ -65,6 +69,11 @@ class LayeredDeviceView: UIView {
         deviceImageView.contentMode     = .ScaleAspectFit
         deviceImageView.image           = UIImage(named: "iPhone5cBlue")
         screenshotImageView.contentMode = .ScaleToFill
+        
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePan:"))
+        panGestureRecognizer.delegate = self
+        screenshotImageView.addGestureRecognizer(panGestureRecognizer)
+        screenshotImageView.userInteractionEnabled = true
         
         self.addSubview(deviceImageView)
         self.addSubview(screenshotImageView)
@@ -105,6 +114,31 @@ class LayeredDeviceView: UIView {
                 forceScreenshotLayout = false
             }
         }
+    }
+    
+    // MARK: - Pan Gesture Methods
+    
+    func handlePan(recognizer:UIPanGestureRecognizer)
+    {
+        if recognizer.state == .Began {
+            originalScreenCenter = screenshotImageView.center
+        }
+        else if recognizer.state == .Changed {
+            
+            if let originalCenter = originalScreenCenter {
+                
+                let translation = recognizer.translationInView(self)
+                let newCenter = CGPointMake(originalCenter.x + translation.x, originalCenter.y + translation.y)
+                if (newCenter.x - (CGRectGetWidth(screenshotImageView.bounds) / 2) > 0 && (newCenter.y - (CGRectGetHeight(screenshotImageView.bounds) / 2)) > 0)
+                {
+                    screenshotImageView.center = newCenter
+                }
+            }
+        }
+    }
+    
+    override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
     // MARK: - Image Manipulation Methods
