@@ -17,16 +17,16 @@ class DEVDeviceSelectionCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.collectionViewLayout = DeviceLayout()
+        self.collectionView!.collectionViewLayout = DeviceLayout()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "Present-Image-Picker"
         {
-            let imagePickerController = (segue.destinationViewController as UINavigationController).viewControllers[0] as ImagePickerPreviewViewController
+            let imagePickerController = (segue.destinationViewController as! UINavigationController).viewControllers[0]as! ImagePickerPreviewViewController
             
-            let index:Int = Int(self.collectionView.contentOffset.x / CGRectGetWidth(self.collectionView.bounds))
+            let index:Int = Int(self.collectionView!.contentOffset.x / CGRectGetWidth(self.collectionView!.bounds))
             imagePickerController.configureForDevice(deviceTypes[index])
         }
         
@@ -40,7 +40,7 @@ class DEVDeviceSelectionCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as DEVDeviceCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)as! DEVDeviceCollectionViewCell
         cell.configureForDevice(deviceTypes[indexPath.row])
         
         return cell

@@ -70,7 +70,7 @@
     _currentValue = _editStepper.value;
     
     _aspectStyle = UIViewContentModeScaleAspectFit;
-    _aspectScale = (!isIpad && _deviceType.isIpadType) ? 4.0 : 2.0;
+    _aspectScale = 4.0;
     
     if (_activeScreenshot == NULL)
     {
